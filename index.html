@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Fav 5 list</title>
+        <style>
+            html {
+                font: 1.2em/1.62 sans-serif;
+                color: #222;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            header, h1, main, h2, p, ol, footer {
+                margin-top: 0;
+                margin-bottom: 1.62rem;
+                overflow: hidden;
+            }
+
+            .header {
+                padding-top: 1.62rem;
+                text-align: center;
+                background-color: orange;
+                background-image: linear-gradient(gold, orange);
+            }
+
+            .header__title {
+                color: white;
+            }
+
+            .main {
+                margin-bottom: 0;
+                padding-right: 1.62rem;
+                padding-left: 1.62rem;
+            }
+
+            .footer {
+                margin-bottom: 0;
+                padding-top: 1.62rem;
+                padding-right: 1.62rem;
+                padding-left: 1.62rem;
+                background-color: skyblue;
+            }
+
+            .footer__copyright {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="header__title">Fav 5 list</h1>
+        </header>
+
+        <main class="main">
+            <p>Pretend you had to move today and sell everything you owned except for the five most important items to you.* What would you hold on to?</p>
+
+            <h2>My Fav 5 list would include:</h2>
+            <ol class="fav5list">
+                <li class="fav5list__item"><b>iPhone 5s</b></li>
+                <li class="fav5list__item"><b>Retina MacBook Pro</b></li>
+                <li class="fav5list__item"><b>Dyson vaccuum</b></li>
+                <li class="fav5list__item"><b>Acoustic guitar</b></li>
+                <li class="fav5list__item"><b>Snowboard</b></li>
+            </ol>
+
+            <p>Share your Fav 5 list: <a href="https://twitter.com/share" class="twitter-share-button" data-text="My #fav5list would include: " data-size="large" data-count="none">Tweet</a></p>
+
+            <p>*<i>The clothes and accessories you&#39;re wearing plus the chargers and accessories for your electronics are included.</i></p>
+        </main>
+
+        <footer class="footer">
+            <p>Recently, I&#39;ve been working on simplifying the way I live and came up with this Fav 5 exercise. Though, I don&#39;t have plans to live strictly with these five things, it has helped me put my stuff into perspective and purge some things I don&#39;t really need.</p>
+                                                                                
+            <p class="footer__copyright"><small>&copy; 2014 <a href="//twitter.com/chrisnager">Chris Nager</a></small></p>
+        </footer>
+
+        <script>
+                !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        </script>
+    </body>
+</html>
