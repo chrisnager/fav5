@@ -3,8 +3,9 @@
     <head>
         <title>Fav 5 list</title>
         <style>
-            html {
-                font: 1.2em/1.62 sans-serif;
+            html,
+            input {
+                font: 1.2em/1.62 Georgia, serif;
                 color: #222;
             }
 
@@ -12,10 +13,26 @@
                 margin: 0;
             }
 
-            header, h1, main, h2, p, ol, footer {
+            header, h1, main, h2, p, ol, li, footer {
                 margin-top: 0;
                 margin-bottom: 1.62rem;
                 overflow: hidden;
+            }
+
+            ol {
+                padding-left: 1.62rem;
+            }
+
+            li {
+                margin-bottom: 0.81rem;
+                overflow: visible;
+            }
+            
+            input {
+                box-sizing: border-box;
+                width: 100%;
+                padding: 0.25rem 0.5rem;
+                font-size: smaller;
             }
 
             .header {
@@ -26,6 +43,7 @@
             }
 
             .header__title {
+                font-family: Quando, Georgia, serif;
                 color: white;
             }
 
@@ -47,6 +65,7 @@
                 text-align: center;
             }
         </style>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quando|Roboto+Slab:400,100,300,700">
     </head>
     <body>
         <header class="header">
@@ -77,6 +96,27 @@
         </footer>
 
         <script>
+            var tweetButton = document.querySelector( '.twitter-share-button' ),
+                tweetText = tweetButton.getAttribute( 'data-text' ),
+                fav5List = ['a', 'b', 'c'],
+                fav5ListItem = document.querySelector( '.fav5list__item > input' ).getAttribute( 'value' ),
+                items = '';
+
+            function updateTweet() {
+                for ( i = 0; i < fav5List.length; i++ ) {
+                    console.log(fav5List[i]); 
+                    items += fav5List[i] + ', ';               
+                    console.log(items);
+                }
+
+                var items = fav5List.toString();
+                tweetText = 'My #fav5list would include: ' + items;
+                console.log(tweetText);
+            }
+
+            tweetButton.addEventListener( 'click', updateTweet );
+            updateTweet();
+
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
         </script>
     </body>
