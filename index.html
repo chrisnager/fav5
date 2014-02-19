@@ -108,25 +108,26 @@
         </footer>
 
         <script>
-            var tweet = document.querySelector( '.twitter-share-button' ).getAttribute( 'data-text' ),
-                fav5List = [ 'yolo', 'swag' ],
-                fav5ListItem = document.querySelector( '.fav5list__item > input' ).getAttribute( 'value' ),
-                items = fav5List.toString();
-
             function updateTweet() {
-                for ( i = 0; i < fav5List.length; i++ ) {
-                    items[i] += fav5List[i];
+                var fav5List = '',
+                    groupOfItems = document.querySelectorAll( '.fav5list__item > input' );
+
+                for ( i = 0; i < groupOfItems.length; i++ ) {
+                    if ( i == groupOfItems.length - 1 ) {
+                        fav5List += ( groupOfItems[i].getAttribute( 'value' ));
+                    } else {
+                        fav5List += ( groupOfItems[i].getAttribute( 'value' )) + ', ';
+                    }
                 }
 
-                console.log('f5l.l= ' + fav5List.length); 
-                console.log('f5l= ' + fav5List); 
-                console.log('items= ' + items);
-                tweet = 'My #fav5list includes: ' + items + ' http://fav5.co';
-                console.log('tweet= ' + tweet);
+                var tweet = 'My #fav5list includes: ' + fav5List + ' http://fav5.co';
+console.log(tweet);
+//console.log(tweet.getAttribute( 'data-text' ));
+                document.querySelector( '.twitter-share-button' ).setAttribute( 'data-text', tweet );
             }
 
-            //tweetButton.addEventListener( 'click', updateTweet );
-            updateTweet();
+console.log(document.querySelector( '.fav5list__item > input' ));
+            document.querySelector( '.fav5list__item > input' ).addEventListener( 'blur', updateTweet );
 
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
         </script>
