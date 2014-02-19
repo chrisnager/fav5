@@ -91,7 +91,7 @@
             <ol class="fav5list">
                 <li class="fav5list__item"><input value="iPhone 5s"></li>
                 <li class="fav5list__item"><input value="Retina MacBook Pro"></li>
-                <li class="fav5list__item"><input value="Dyson vaccuum"></li>
+                <li class="fav5list__item"><input value="Dyson vacuum"></li>
                 <li class="fav5list__item"><input value="Acoustic guitar"></li>
                 <li class="fav5list__item"><input value="Snowboard"></li>
             </ol>
@@ -121,15 +121,13 @@
                 }
 
                 var tweet = 'My #fav5list includes: ' + fav5List + ' http://fav5.co';
-console.log(tweet);
-//console.log(tweet.getAttribute( 'data-text' ));
-                document.querySelector( '.twitter-share-button' ).setAttribute( 'data-text', tweet );
+console.log(encodeURI(tweet));
+                document.querySelector( '.twitter-share-button' ).setAttribute( 'href', "https://twitter.com/share/?text=" + encodeURI( tweet ));
             }
 
 console.log(document.querySelector( '.fav5list__item > input' ));
             document.querySelector( '.fav5list__item > input' ).addEventListener( 'blur', updateTweet );
 
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
         </script>
     </body>
 </html>
