@@ -20,6 +20,14 @@
                 overflow: hidden;
             }
 
+            h1, h2, small {
+                font-family: Quando, Georgia, serif;
+            }
+
+            h2 {
+                font-size: 1.25em;
+            }
+
             ol {
                 padding-left: 1.62rem;
             }
@@ -44,7 +52,6 @@
             }
 
             .header__title {
-                font-family: Quando, Georgia, serif;
                 color: white;
             }
 
@@ -65,8 +72,12 @@
             .footer__copyright {
                 text-align: center;
             }
+            
+            .footer a {
+                color: white;
+            }
         </style>
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quando|Roboto+Slab:400,100,300,700">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quando">
     </head>
     <body>
         <header class="header">
@@ -76,7 +87,7 @@
         <main class="main">
             <p>Pretend you had to move today and sell everything you owned except for the five most important items to you.* What would you hold on to?</p>
 
-            <h2>My Fav 5 list would include:</h2>
+            <h2>My Fav 5 list includes:</h2>
             <ol class="fav5list">
                 <li class="fav5list__item"><input value="iPhone 5s"></li>
                 <li class="fav5list__item"><input value="Retina MacBook Pro"></li>
@@ -85,9 +96,9 @@
                 <li class="fav5list__item"><input value="Snowboard"></li>
             </ol>
 
-            <p>Share your Fav 5 list: <br><a href="https://twitter.com/share" class="twitter-share-button" data-text="My #fav5list would include: " data-size="large" data-count="none">Tweet</a></p>
+            <p>Share your Fav 5 list on Twitter: <br><br><a href="https://twitter.com/share" class="twitter-share-button" data-text="My #fav5list includes: " data-size="large" data-count="none">Tweet</a></p>
 
-            <p>*<i>The clothes and accessories you&#39;re wearing plus the chargers and accessories for your electronics are included.</i></p>
+            <p>*<small><i>The clothes and accessories you&#39;re wearing plus the chargers and accessories for your electronics do not count against your 5 items.</i></small></p>
         </main>
 
         <footer class="footer">
@@ -99,7 +110,7 @@
         <script>
             var tweetButton = document.querySelector( '.twitter-share-button' ),
                 tweetText = tweetButton.getAttribute( 'data-text' ),
-                fav5List = ['a', 'b', 'c'],
+                fav5List = [],
                 fav5ListItem = document.querySelector( '.fav5list__item > input' ).getAttribute( 'value' ),
                 items = '';
 
@@ -111,12 +122,11 @@
                 }
 
                 var items = fav5List.toString();
-                tweetText = 'My #fav5list would include: ' + items;
+                tweetText = 'My #fav5list includes: ' + items;
                 console.log(tweetText);
             }
 
             tweetButton.addEventListener( 'click', updateTweet );
-            updateTweet();
 
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
         </script>
