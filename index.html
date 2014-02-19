@@ -96,7 +96,7 @@
                 <li class="fav5list__item"><input value="Snowboard"></li>
             </ol>
 
-            <p>Share your Fav 5 list on Twitter: <br><br><a href="https://twitter.com/share" class="twitter-share-button" data-text="My #fav5list includes: " data-size="large" data-count="none">Tweet</a></p>
+            <p>Share your Fav 5 list on Twitter: <br><br><a href="https://twitter.com/share" class="twitter-share-button" data-text="My #fav5list includes: http://fav5.co" data-size="large" data-count="none">Tweet</a></p>
 
             <p>*<small><i>The clothes and accessories you&#39;re wearing plus the chargers and accessories for your electronics do not count against your 5 items.</i></small></p>
         </main>
@@ -108,25 +108,25 @@
         </footer>
 
         <script>
-            var tweetButton = document.querySelector( '.twitter-share-button' ),
-                tweetText = tweetButton.getAttribute( 'data-text' ),
-                fav5List = [],
+            var tweet = document.querySelector( '.twitter-share-button' ).getAttribute( 'data-text' ),
+                fav5List = [ 'yolo', 'swag' ],
                 fav5ListItem = document.querySelector( '.fav5list__item > input' ).getAttribute( 'value' ),
-                items = '';
+                items = fav5List.toString();
 
             function updateTweet() {
                 for ( i = 0; i < fav5List.length; i++ ) {
-                    console.log(fav5List[i]); 
-                    items += fav5List[i] + ', ';               
-                    console.log(items);
+                    items[i] += fav5List[i];
                 }
 
-                var items = fav5List.toString();
-                tweetText = 'My #fav5list includes: ' + items;
-                console.log(tweetText);
+                console.log('f5l.l= ' + fav5List.length); 
+                console.log('f5l= ' + fav5List); 
+                console.log('items= ' + items);
+                tweet = 'My #fav5list includes: ' + items + ' http://fav5.co';
+                console.log('tweet= ' + tweet);
             }
 
-            tweetButton.addEventListener( 'click', updateTweet );
+            //tweetButton.addEventListener( 'click', updateTweet );
+            updateTweet();
 
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
         </script>
