@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html>
     <head>
-        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>#Fav5</title>
+        <meta name="description" content="What are your five most important items?">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             html,
             input {
@@ -24,7 +27,7 @@
                 overflow: hidden;
             }
 
-            h1, h2, small {
+            h1, h2, small, .tweet__button {
                 font-family: Quando, Georgia, serif;
             }
 
@@ -81,8 +84,10 @@
                 display: block;
                 text-align: center;
                 text-decoration: none;
+                text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
                 color: white;
-                background-color: skyblue;
+                background-color: orange;
+                background-image: linear-gradient(gold, orange);
             }
             
             .footer {
@@ -97,7 +102,6 @@
                 max-width: 30rem;
                 margin-right: auto;
                 margin-left: auto;
-             
             }
 
             .footer__copyright {
@@ -118,7 +122,9 @@
         <main class="main">
             <p>Pretend you had to move today and sell everything you owned except for the five most important items to you.* What would you hold on to?</p>
 
-            <h2>My #Fav5 includes:</h2>
+            <p>Enter your five most important items below.</p>
+
+            <h2>My #Fav5 items:</h2>
             <ol class="fav5">
                 <li class="fav5__item"><input value="iPhone 5s"></li>
                 <li class="fav5__item"><input value="Retina MacBook Pro"></li>
@@ -128,8 +134,8 @@
             </ol>
 
             <div class="tweet">
-                <p class="tweet__preview">My #Fav5 includes: iPhone 5s, Retina MacBook Pro, Dyson vacuum, acoustic guitar, and snowboard http://fav5.co</p>
-                <a href="https://twitter.com/share" class="tweet__button" data-text="My #Fav5 includes: http://fav5.co" data-size="large" data-count="none">Tweet your #Fav5</a>
+                <p class="tweet__preview">My #Fav5 items: iPhone 5s, Retina MacBook Pro, Dyson vacuum, acoustic guitar, and snowboard http://fav5.co</p>
+                <a href="https://twitter.com/share" class="tweet__button" data-text="My #Fav5 items: http://fav5.co" data-size="large" data-count="none">Tweet your #Fav5</a>
             </div>
 
             <p>*<small><i>The clothes and accessories you&#39;re wearing plus the chargers and accessories for your electronics do not count against your 5 items.</i></small></p>
@@ -154,12 +160,13 @@
                     }
                 }
 
-                var tweet = 'My #Fav5 includes: ' + fav5 + ' http://fav5.co';
+                var tweet = 'My #Fav5 items: ' + fav5 + ' http://fav5.co';
 
-                document.querySelector( '.preview' ).textContent = tweet;
-console.log(tweet);
-console.log(encodeURI(tweet).toString());
-                document.querySelector( '.twitter-share-button' ).setAttribute( 'href', "https://twitter.com/share/?text=" + encodeURI( tweet ));
+                document.querySelector( '.tweet__preview' ).textContent = tweet;
+console.log(fav5);
+//console.log(tweet);
+//console.log(encodeURI(tweet));
+                document.querySelector( '.tweet__button' ).setAttribute( 'href', "https://twitter.com/share/?text=" + encodeURI( tweet ));
             }
 
             for ( i = 1; i < 6; i++ ) {
