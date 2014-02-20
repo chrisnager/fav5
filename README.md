@@ -1,4 +1,4 @@
-![Fav 5 List](favicon.png "Fav 5 List")
+![Fav 5](favicon.png "Fav 5")
 
 # fav5list
 
