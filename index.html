@@ -133,7 +133,7 @@
                 color: white;
             }
         </style>
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quando">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Quando">
     </head>
     <body>
         <header class="header">
@@ -156,7 +156,7 @@
 
             <div class="tweet">
                 <p class="tweet__preview">My #Fav5 items: iPhone 5s, Retina MacBook Pro, acoustic guitar, snowboard, and Dyson vacuum http://fav5.co</p>
-                <a href="https://twitter.com/share" class="tweet__button" target="_blank">Tweet your #Fav5</a>
+                <a href="//twitter.com/share" class="tweet__button" target="_blank">Tweet your #Fav5</a>
             </div>
 
             <p>*<small><i>The clothes and accessories you&#39;re wearing plus the chargers and accessories for your electronics do not count against your 5 items.</i></small></p>
@@ -165,7 +165,7 @@
         <footer class="footer">
             <p>Recently, I&#39;ve been working on simplifying the way I live and came up with this #Fav5 exercise. Though, I don&#39;t have plans to live strictly with these five things, it has helped me put my stuff into perspective and purge some things I don&#39;t really need.</p>
                                                                                 
-            <p class="footer__copyright"><small>&copy; 2014 <a href="//twitter.com/chrisnager">Chris Nager</a> &middot; Hosted on <a href="https://github.com/chrisnager/fav5list">GitHub</a></small></p>
+            <p class="footer__copyright"><small>&copy; 2014 <a href="//twitter.com/chrisnager">Chris Nager</a> &middot; Hosted on <a href="//github.com/chrisnager/fav5list">GitHub</a></small></p>
         </footer>
 
         <script>
@@ -181,13 +181,10 @@
                     }
                 }
 
-console.log(fav5);
-                var tweet = 'My #Fav5 items: ' + fav5 + ' http://fav5.co';
+                var tweet = 'My #Fav5 items: ' + fav5 + ' //fav5.co';
 
-console.log(tweet);
                 document.querySelector( '.tweet__preview' ).textContent = tweet;
-//console.log(encodeURI(tweet));
-                document.querySelector( '.tweet__button' ).setAttribute( 'href', "https://twitter.com/share/?text=" + encodeURI( tweet ));
+                document.querySelector( '.tweet__button' ).setAttribute( 'href', "//twitter.com/share/?text=" + encodeURIComponent( tweet ));
             }
 
             for ( i = 1; i < 6; i++ ) {
