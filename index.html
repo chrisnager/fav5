@@ -172,7 +172,7 @@
         <footer class="footer">
             <p>Recently, I&#39;ve been working on simplifying the way I live and came up with this #Fav5 exercise. Though, I don&#39;t have plans to live strictly with these five things, it has helped me put my stuff into perspective and purge some things I don&#39;t really need.</p>
                                                                                 
-            <p class="footer__copyright"><small>&copy; 2014 <a href="//urx.io/p5qlPh">Chris Nager</a> &middot; Hosted on <a href="//github.com/chrisnager/fav5">GitHub</a></small></p>
+            <p class="footer__copyright"><small>&copy; 2014<span class="copyright-current-year"></span> <a href="//urx.io/p5qlPh">Chris Nager</a> &middot; Hosted on <a href="//github.com/chrisnager/fav5">GitHub</a></small></p>
         </footer>
 
         <script>
@@ -197,6 +197,8 @@
             for ( i = 1; i < 6; i++ ) {
                 document.querySelector( '.fav5__item:nth-of-type(' + i + ') > input' ).addEventListener( 'blur', updateTweet );
             }
+
+            document.getElementsByClassName('copyright-current-year')[0].innerHTML = '-' + new Date().getFullYear();
 
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
